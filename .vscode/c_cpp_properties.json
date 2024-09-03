@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "G:\\UNIVERSITY SHIT\\SEM 2 2024\\EEET2482 (Engineering Design)\\Group Project\\Carpooling-Group-Project\\include",
+                "G:\\UNIVERSITY SHIT\\SEM 2 2024\\EEET2482 (Engineering Design)\\Group Project\\Carpooling-Group-Project"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "C:\\Users\\Admin\\Downloads\\x86_64-13.2.0-release-mcf-seh-ucrt-rt_v11-rev1\\mingw64\\bin\\gcc.exe",
+            "cStandard": "c17",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "windows-gcc-x64"
+        }
+    ],
+    "version": 4
+}
