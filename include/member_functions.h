@@ -2,6 +2,8 @@
 This file includes calling functions and include header functions
 */
 #include <iostream>
+#include <string>
+#include <cctype>
 
 using std::string, std::cout, std::cin;
 
@@ -17,30 +19,35 @@ protected:
     int creditPoints;
 public:
     // Constructors:
-
+    Member(string name, string password, string fullname, string email, int IDnum, int phoneNum, int creditPoints);
 
     // Methods:
-    int getCredit(){
-        return creditPoints;
-    }
+    int getCredit();
 
-    void purchaseCredit(){
-        int creditPurchase;
-        cout << "How many credit you want to purchase: "; cin >> creditPurchase;
-        creditPoints = creditPurchase;
-        cout << "Purchased credit successfully!\n";
-    }
+    void purchaseCredit();
+
+    bool userRegister();
+    bool isUsernameValid(string name);
+    bool isPasswordValid(string password);
+    bool isEmailValid(string email);
+
+    bool login();
 };
 
 class User:public Member{
 private:
     scoreRating passengerScore;
+public:
+    //Constructor
+    User(scoreRating passengerScore, string name, string password, string fullname, string email, int IDnum, int phoneNum, int creditPoints);
 
+    void updateProfile();
 };
 
 class Drivers:public Member{
 private:
     scoreRating driverScore;
+public:
 
 };
 
