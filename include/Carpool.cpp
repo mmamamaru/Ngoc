@@ -1,5 +1,5 @@
-#include "Carpool.h"
 #include <iostream>
+#include <Carpool.h>
 using namespace std;
 
 // Constructor initialization
@@ -38,10 +38,10 @@ void Carpool::listingDetails() {
     cout << "Enter date (Day/Month/Year): ";
     getline(cin, date);
 
-    cout << "Enter departure time (e.g. 13h30): ";
+    cout << "Enter departure time (e.g. 13h30 = 13.30): ";
     cin >> departTime;
 
-    cout << "Enter estimated duration (hours): ";
+    cout << "Enter estimated duration (e.g. 2 hours 30 minutes = 2.5 hours): ";
     cin >> estimatedDuration;
 
     cin.ignore();  // Ignore the newline character left in the input
