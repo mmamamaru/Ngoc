@@ -11,7 +11,7 @@ Member::Member(string name="", string password="", string fullname="", string em
 
 //Define functions
 int Member::getCredit(){
-        return creditPoints;
+    return creditPoints;
 }
 
 void Member::purchaseCredit(){
@@ -58,30 +58,32 @@ bool Member::userRegister(){
 
     //Charge 10 credit points
     while(creditPoints < 10){
+        cout << "Insufficient amount of credit, please purchase at least 10 for registration!\n";
         purchaseCredit();
     }
     creditPoints -= 10;
     cout << "Registration complete. 10 credit points has been charged.\n";
+
     return true;
 }
 
-bool Member::isUsernameValid(string name){
+bool Member::isUsernameValid(string name){ // Checking the validity of the username
     for(char c : name){
         if(!isalnum(c)){ //check if the character is not alphanumeiic
             cout << "Username can only contains letters and numbers.\n";
-            return false;
+            return false; // return false immediately
         }
     }
     return true;
 }
 
-bool Member::isPasswordValid(string password){
-    if(password.length() < 6){
+bool Member::isPasswordValid(string password){ // Checking password validity
+    if(password.length() < 6){ // If password length is less than 6 characters, return
         cout << "Password must be at least 6 characters long.\n";
         return false;
     }
 
-    bool hasDigit = false, hasUpper = false, hasSpecial = false;
+    bool hasDigit = false, hasUpper = false, hasSpecial = false; // Boolean for checking certain conditions
     for(char c : password){
         if(isdigit(c)) hasDigit = true;
         if(isupper(c)) hasUpper = true;
@@ -104,7 +106,7 @@ bool Member::isPasswordValid(string password){
 }
 
 
-bool Member::isEmailValid(string email){
+bool Member::isEmailValid(string email){ // Find email's '@' position and a '.'
     int atPosition = email.find('@');
     int dotPosition = email.find('.');
 
@@ -135,15 +137,9 @@ bool Member::login(){
 }
 
 /*Class User*/
-User::User(scoreRating passengerScore, string name, string password, string fullname, string email, int IDnum, int phoneNum, int creditPoints)
-    : passengerScore(passengerScore), Member(name, password, fullname, email, IDnum, phoneNum, creditPoints) {}
+User::User(/*scoreRating passengerScore,*/ string name, string password, string fullname, string email, int IDnum, int phoneNum, int creditPoints)
+    : /*passengerScore(passengerScore),*/ Member(name, password, fullname, email, IDnum, phoneNum, creditPoints) {}
 
 void User::updateProfile(){
-    cout << "Profile Information:\n";
-    cout << "Username: " << name << endl;
-    cout << "Full Name: " << fullname << endl;
-    cout << "Email: " << email << endl;
-    cout << "ID/Passport Number: " << IDnum << endl;
-    cout << "Phone Number: " << phoneNum << endl;
-    cout << "Credit Points: " << creditPoints << endl;
+    
 }

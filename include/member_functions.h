@@ -36,27 +36,19 @@ public:
 
 class User:public Member{
 private:
-    scoreRating passengerScore;
+    // Add score rating into each Driver
+    // scoreRating passengerScore;
 public:
     //Constructor
-    User(scoreRating passengerScore, string name, string password, string fullname, string email, int IDnum, int phoneNum, int creditPoints);
+    User(/*scoreRating passengerScore*/ string name, string password, string fullname, string email, int IDnum, int phoneNum, int creditPoints);
 
     void updateProfile();
 };
 
 class Drivers:public Member{
 private:
-    scoreRating driverScore;
+    // Add score rating into each Driver
+    // scoreRating driverScore;
 public:
 
-};
-
-class scoreRating{
-private:
-    int score;
-
-public:
-    void setScore(int newScore){
-        score = newScore;
-    }
 };
